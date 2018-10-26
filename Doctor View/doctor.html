@@ -4,12 +4,22 @@
 <head>
   <title>Doctor View</title>
   <link rel="stylesheet" type="text/css" href="doctor_styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="doctor_scripts.js"></script>
 </head>
 <body>
   <div id="bars"></div>
   <script>animateSoundBars();</script>
-  <canvas id="gauge" width="300" height="300">
+  <canvas id="gauge" width="300" height="300"></canvas>
   <script>animateGauge();</script>
+  <div class="box js-box">
+    <button class="button js-button"></button>
+    <div class="content">
+      <h1>Electronic Patient Record</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime in aliquam deserunt explicabo a. Impedit esse qui, illo, ut in dicta, minus animi nobis veritatis earum fugiat nam voluptatum debitis!</p>
+    </div>
+  </div>
+  <script>animateEPR();</script>
+  <img src="Asset 2.svg" alt="Translation background"  id="translation_background">
 </body>
 </html>
