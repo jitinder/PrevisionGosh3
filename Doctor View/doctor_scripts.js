@@ -18,7 +18,7 @@ function animateGauge() {
   var degrees = 0;
   var new_degrees = 0;
   var difference = 0;
-  var color = "#18CAE6";
+  var color = "#BFE9FF91";
   var text;
   var animation_loop, redraw_loop;
   function init()

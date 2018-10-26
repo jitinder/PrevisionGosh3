@@ -10,8 +10,8 @@
 
 #gauge {
 	position: absolute;
-  top: 20%;
-  left: 65%;
+  top: 13%;
+  left: 76%;
 	width: 300px;
 	margin: 100px auto;
 }
@@ -19,9 +19,9 @@
 #translation_background {
   display: block;
   position: absolute;
-  top: 50%;
-  left: 10%;
-  width: 300px;
+  top: 25%;
+  left: 5%;
+  width: 400px;
 }
 
 .bar {
@@ -29,7 +29,7 @@
   bottom: 0px;
   height: 3px;
   width: 1px;
-  background: #18CAE6;
+  background: #BFE9FF91;
   animation: sound 0ms -900ms linear infinite alternate;
   transform: translateY(50%);
 }
@@ -66,53 +66,57 @@ h1 {
 }
 
 p {
-  font-family: monospace sans-serif;
-  line-height: 1.5;
-  font-size: 20px;
-  font-weight: 300;
+  font-family: monospace, sans-serif;
+  font-weight: 400;
+  margin-top: 0;
 }
 
 .box {
-  background: #18CAE6;
+  position: relative;
+  top: 25%;
+  left: 33%;
+  background: #BFE9FF91;
   width: 50px;
   height: 50px;
   transition: width 0.2s, height 0.2s;
   will-change: width, height;
 }
+
 .box.is-opening {
   width: 600px;
   height: 400px;
 }
+
 .button {
   display: flex;
-  will-change: content;
   justify-content: center;
   align-items: center;
   width: 50px;
   height: 50px;
-  background: #18CAE6;
+  background: #BFE9FF91;
   border: 0;
   font-size: 30px;
   color: #fff;
   outline: 0;
-  transition: background 0.2s;
 }
-.button:hover {
-  background: #18CAE6;
-}
+
 .button:after {
   content: '+';
   transition: transform 0.2s;
 }
+
 .is-opening .button {
-  background: #18CAE6;
+  background: #BFE9FF00;
 }
+
 .is-opening .button:after {
   transform: rotate(-45deg);
 }
+
 .is-open .button {
-  background: #18CAE6;
+  background: #BFE9FF00;
 }
+
 .content {
   opacity: 0;
   padding: 0 60px;
@@ -120,6 +124,7 @@ p {
   color: #fff;
   will-change: opacity;
 }
+
 .is-open .content {
   opacity: 1;
 }
