@@ -12,6 +12,14 @@ body {
   transform:scale(3) translateX(-15%);
 }
 
+#gauge {
+	position: absolute;
+  top: 20%;
+  left: 65%;
+	width: 300px;
+	margin: 100px auto;
+}
+
 .bar {
   position: absolute;
   bottom: 0px;
