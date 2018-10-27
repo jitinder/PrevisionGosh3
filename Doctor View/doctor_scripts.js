@@ -36,7 +36,7 @@ function animateGauge() {
     if(typeof animation_loop != undefined) clearInterval(animation_loop);
     new_degrees = Math.round(Math.random()*360);
     difference = new_degrees - degrees;
-    animation_loop = setInterval(animate_to, 3000/difference);
+    animation_loop = setInterval(animate_to, 5000/difference);
   }
 
   function animate_to()
@@ -65,7 +65,7 @@ function animateEPR() {
     if (box.classList.contains(first)) {
       [first, second] = [second, first]
     }
-
+    
     box.classList.toggle(first)
 
     setTimeout(() => {
@@ -73,3 +73,9 @@ function animateEPR() {
     }, 400)
   })
 }
+
+window.onload = function() {
+  animateEPR();
+  animateGauge();
+  animateSoundBars();
+};

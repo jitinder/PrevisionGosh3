@@ -1,3 +1,5 @@
+/* CSS For Sound Bars */
+
 #bars {
   position: absolute;
   top: 5%;
@@ -6,22 +8,6 @@
   width: 180px;
   margin: 0 0 0 0;
   transform:scale(3) translateX(-15%);
-}
-
-#gauge {
-	position: absolute;
-  top: 13%;
-  left: 76%;
-	width: 300px;
-	margin: 100px auto;
-}
-
-#translation_background {
-  display: block;
-  position: absolute;
-  top: 25%;
-  left: 5%;
-  width: 400px;
 }
 
 .bar {
@@ -45,6 +31,59 @@
     }
 }
 
+/* CSS For Sound Scanner */
+
+.sound_scanner {
+  position: absolute;
+  left: 36%;
+  top: 2.5%;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+}
+
+.sound_scanner span {
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  background-color: #FFFFFFa0;
+  z-index: 1;
+  transform: translateY(135%);
+  animation: move 2.5s cubic-bezier(0.15, 0.44, 0.76, 0.64);
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    transform: translateX(540px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+}
+
+/* CSS For 'Understanding' Gauge */
+
+#gauge {
+	position: absolute;
+  top: 8%;
+  left: 76%;
+	width: 300px;
+	margin: 100px auto;
+}
+
+/* CSS For SVG Asset 2 */
+
+#translation_background {
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 400px;
+}
+
+/* CSS For EPR */
+
 html {
   height: 100%;
 }
@@ -57,6 +96,7 @@ body {
   justify-content: center;
   align-items: center;
   background: #000000;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -72,14 +112,50 @@ p {
 }
 
 .box {
-  position: relative;
+  position: relative; /* absolute for ocr */
   top: 25%;
   left: 33%;
-  background: #BFE9FF91;
   width: 50px;
   height: 50px;
   transition: width 0.2s, height 0.2s;
   will-change: width, height;
+}
+
+.box:before,
+.box:after,
+.box em:after,
+.box em:before {
+  border-color: #BFE9FF91;
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-style: solid;
+  border-width: 0px;
+}
+.box:before {
+  left: 0;
+  top: 0;
+  border-left-width: 3px;
+  border-top-width: 3px;
+}
+.box:after {
+  right: 0;
+  top: 0;
+  border-right-width: 3px;
+  border-top-width: 3px;
+}
+.box em:before {
+  left: 0;
+  bottom: 0;
+  border-left-width: 3px;
+  border-bottom-width: 3px;
+}
+.box em:after {
+  right: 0;
+  bottom: 0;
+  border-right-width: 3px;
+  border-bottom-width: 3px;
 }
 
 .box.is-opening {
@@ -93,35 +169,28 @@ p {
   align-items: center;
   width: 50px;
   height: 50px;
-  background: #BFE9FF91;
+  background: #FFFFFF00;
   border: 0;
   font-size: 30px;
-  color: #fff;
+  color: #FFFFFF;
   outline: 0;
 }
 
 .button:after {
   content: '+';
+  color: #FFFFFF91;
   transition: transform 0.2s;
-}
-
-.is-opening .button {
-  background: #BFE9FF00;
 }
 
 .is-opening .button:after {
   transform: rotate(-45deg);
 }
 
-.is-open .button {
-  background: #BFE9FF00;
-}
-
 .content {
   opacity: 0;
   padding: 0 60px;
   transition: opacity 0.2s;
-  color: #fff;
+  color: #FFFFFF91;
   will-change: opacity;
 }
 
