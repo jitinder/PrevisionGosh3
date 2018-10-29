@@ -43,9 +43,9 @@ function init(){
     nearPlane,
     farPlane);
   camera.position.z = 800;
-  camera.position.x=-50;  
-  camera.position.y = 0;
-  camera.lookAt(new THREE.Vector3(2,0,0));    
+  camera.position.x=-10;  
+  camera.position.y = 10;
+  camera.lookAt(new THREE.Vector3(-2,1,0));    
   
   renderer = new THREE.WebGLRenderer({alpha: true, antialias: true });
   
