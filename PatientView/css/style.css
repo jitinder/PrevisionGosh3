@@ -20,3 +20,104 @@ body {
   background-size: cover;
   margin:auto;
 }
+
+.box {
+  position: relative; /* absolute for ocr */
+  top: 25%;
+  left: 33%;
+  width: 150px;
+  height: 70px;
+  transition: width 0.2s, height 0.2s;
+  will-change: width, height;
+}
+
+.box:before,
+.box:after,
+.box em:after,
+.box em:before {
+  border-color: #BFE9FF91;
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+  border-width: 0px;
+}
+.box:before {
+  left: 0;
+  top: 0;
+  border-left-width: 3px;
+  border-top-width: 3px;
+}
+.box:after {
+  right: 0;
+  top: 0;
+  border-right-width: 3px;
+  border-top-width: 3px;
+}
+.box em:before {
+  left: 0;
+  bottom: 0;
+  border-left-width: 3px;
+  border-bottom-width: 3px;
+}
+.box em:after {
+  right: 0;
+  bottom: 0;
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+}
+
+.box.is-opening {
+  width: 600px;
+  height: 400px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 70px;
+  background: #FFFFFF00;
+  border: 0;
+  font-size: 30px;
+  color: #FFFFFF;
+  outline: 0;
+}
+
+.button:after {
+  content: 'CAUTIONS';
+  color: #FFFFFF91;
+  transition: transform 0.2s;
+}
+
+.is-opening .button:after {
+  -transform: rotate(-45deg);
+  content: 'x';
+}
+
+.content {
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: #FFFFFF91;
+  will-change: opacity;
+}
+
+.is-open .content {
+  opacity: 1;
+}
+
+.icon-square {
+  height: 75px;
+  width: 75px;
+}
+
+img
+{
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -35,3 +35,29 @@ function typewriter()
 
 
 typewriter();
+
+function animateEPR() {
+  const button = document.querySelector('.js-button')
+
+  button.addEventListener('click', function() {
+    const box = document.querySelector('.js-box')
+
+    let first = 'is-opening'
+    , second = 'is-open'
+
+    if (box.classList.contains(first)) {
+      [first, second] = [second, first]
+    }
+
+    box.classList.toggle(first)
+
+    setTimeout(() => {
+      box.classList.toggle(second)
+    }, 400)
+  })
+}
+
+window.onload = function() {
+  animateEPR(); // TODO add timers to scan first, then have the popups
+};
+
