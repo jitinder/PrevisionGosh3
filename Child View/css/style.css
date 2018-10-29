@@ -13,7 +13,7 @@
 {
 position:absolute;
   width:100%;
-  top:30%;
+  top:15%;
   margin: auto;
   padding-top: 120px;
   padding-right: 100px;
@@ -27,6 +27,36 @@ position:absolute;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+#generalList 
+{
+position:absolute;
+  width:100%;
+  top:15%;
+  margin: auto;
+  padding-top: 120px;
+  padding-right: 100px;
+  padding-left: 8em;
+  font-family:'Open Sans', sans-serif;
+  color:#FFFFFF;
+  font-size:.9em;
+  text-transform: lowercase;
+  text-align : left;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
+/*list-style-type:none;*/
+
+  /*list-style-image: url('https://svgshare.com/s/95w');*/
+}
+
+#generalList li
+{
+
+padding-top: 3em;
 }
 
 #instructions{
@@ -60,6 +90,13 @@ position:absolute;
   font-family:'Open Sans', sans-serif;
   color:#FFFFFF;
   font-size:0.7em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   text-align : center;
+}
+
+
+#information
+{
+  padding-top: 3em;
+  border-top: 1px;
 }
