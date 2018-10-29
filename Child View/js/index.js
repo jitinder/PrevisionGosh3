@@ -445,7 +445,9 @@ Lion = function(){
   this.mouth.position.z = 171;
   this.mouth.position.y = -30;
   
-  this.mouth.scale.set(.8,.8,1);
+
+  // this.mouth.scale.set(.8,.8,1);
+
   this.mouth.scale.set(.7,.4,1);
   
   // smile
@@ -609,6 +611,7 @@ Lion.prototype.look = function(xTarget, yTarget){
       var tv = this.body.geometry.vertices[this.bodyVertices[i]];
       tv.x = tvInit.x + this.head.position.x;
   }
+  
   this.body.geometry.verticesNeedUpdate = true;
 }
 
