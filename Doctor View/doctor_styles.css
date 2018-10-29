@@ -1,9 +1,11 @@
+/* 1268x720 */
+
 /* CSS For Sound Bars */
 
 #bars {
   position: absolute;
   top: 5%;
-  left: 50%;
+  left: 49%;
   height: 14px;
   width: 180px;
   margin: 0 0 0 0;
@@ -35,7 +37,7 @@
 
 .sound_scanner {
   position: absolute;
-  left: 36%;
+  left: 27.5%;
   top: 2.5%;
   transform: translate(-50%, -50%);
   backface-visibility: hidden;
@@ -66,7 +68,7 @@
 
 #gauge {
 	position: absolute;
-  top: 8%;
+  top: 19%;
   left: 76%;
 	width: 300px;
 	margin: 100px auto;
@@ -74,7 +76,7 @@
 
 #gauge_background {
   position: absolute;
-  top: 16.5%;
+  top: 20%;
   left: 74.5%;
   width: 350px;
 }
@@ -89,7 +91,7 @@
   position: absolute;
   top: 37%;
   left: 4%;
-  width:450px;
+  width:300px;
   height: 1px;
   margin:auto;
 }
@@ -101,7 +103,7 @@
   position: absolute;
   top: 35%;
   left: 3%;
-  width: 500px;
+  width: 350px;
 }
 
 @-webkit-keyframes rotation {
@@ -145,9 +147,9 @@ p {
 }
 
 .box {
-  position: relative;
-  top: 25%;
-  left: 33%;
+  position: absolute;
+  top: 77%;
+  left: 3%;
   width: 150px;
   height: 70px;
   transition: width 0.3s, height 0.3s;
@@ -233,51 +235,13 @@ p {
 
 /* Facial Scanner */
 
-body, .skin {
-  display: flex;
-  justify-content: center;
-}
-
-body {
-  width: 100%;
-  height: 100vh;
-  align-items: center;
-}
-
-.skin {
-  background-color: #f2f2f6;
-  height: 10em;
-  width: 10em;
-  border-radius: .5em;
-  overflow: hidden;
-  border: 3px solid #ddd;
-  position: relative;
-}
-
-.skin:before, .skin:after {
-  position: absolute;
-  content: '';
-  background-color: #ccc;
-  border-radius: 50%;
-  left: 0; right: 0; margin: auto;
-}
-
-.skin:before {
-  height: 6em; width: 6em;
-  background-color: #ccc;
-  top: 2em;
-}
-
-.skin:after {
-  height: 9em; width: 9em;
-  top: 8.2em;
-}
-
 .scanner {
-  --color: rgba(69,142,255,.8);
+  position: relative;
+  top: 1%;
+  --color: rgba(67,132,250,.5);
   z-index: 1;
   height: .25em;
-  width: 80%;
+  width: 500px;
   background-color: var(--color);
   transform: translatey(1em);
   position: relative;
@@ -291,7 +255,7 @@ body {
   position: absolute;
   content: '';
   left: 0; right: 0; margin: auto;
-  width: 80%; height: 60px;
+  width: 80%; height: 20px;
   filter: blur(.25em);
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
@@ -299,7 +263,7 @@ body {
 }
 
 .scanner:before {
-  top: -60px;
+  top: -20px;
   background: linear-gradient(to top, var(--color) 0%, transparent 100%);
   animation-name: visibilityOn;
 }
@@ -313,10 +277,10 @@ body {
 
 @keyframes moveUpAndDown {
   from {
-    transform: translatey(1em);
+    transform: translatey(-16em);
   }
   to {
-    transform: translatey(9em);
+    transform: translatey(18em);
   }
 }
 
