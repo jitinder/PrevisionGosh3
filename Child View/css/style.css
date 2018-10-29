@@ -9,7 +9,6 @@
   overflow:hidden;
 }
 
-
 #generalText
 {
 position:absolute;
@@ -18,11 +17,12 @@ position:absolute;
   margin: auto;
   padding-top: 120px;
   padding-right: 100px;
+  padding-left: 3em;
   font-family:'Open Sans', sans-serif;
   color:#FFFFFF;
   font-size:.9em;
   text-transform: lowercase;
-  text-align : center;
+  text-align : left;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
