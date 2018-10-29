@@ -444,7 +444,9 @@ Lion = function(){
   this.mouth = new THREE.Mesh(mouthGeom, this.blackMat);
   this.mouth.position.z = 171;
   this.mouth.position.y = -30;
-  this.mouth.scale.set(.5,.5,1);
+  
+  this.mouth.scale.set(.8,.8,1);
+  this.mouth.scale.set(.7,.4,1);
   
   // smile
   this.smile = new THREE.Mesh(smileGeom, this.greyMat);
