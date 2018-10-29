@@ -1,0 +1,232 @@
+/* CSS For Sound Bars */
+
+#bars {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  height: 14px;
+  width: 180px;
+  margin: 0 0 0 0;
+  transform:scale(3) translateX(-15%);
+}
+
+.bar {
+  position: absolute;
+  bottom: 0px;
+  height: 3px;
+  width: 1px;
+  background: #BFE9FF91;
+  animation: sound 0ms -900ms linear infinite alternate;
+  transform: translateY(50%);
+}
+
+@keyframes sound {
+    0% {
+       opacity: .35;
+        height: 3px;
+    }
+    100% {
+        opacity: 1;
+        height: 28px;
+    }
+}
+
+/* CSS For Sound Scanner */
+
+.sound_scanner {
+  position: absolute;
+  left: 36%;
+  top: 2.5%;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+}
+
+.sound_scanner span {
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  background-color: #FFFFFFa0;
+  z-index: 1;
+  transform: translateY(135%);
+  animation: move 4s cubic-bezier(0.15, 0.44, 0.76, 0.64);
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    transform: translateX(540px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+}
+
+/* CSS For 'Understanding' Gauge */
+
+#gauge {
+	position: absolute;
+  top: 8%;
+  left: 76%;
+	width: 300px;
+	margin: 100px auto;
+}
+
+#gauge_background {
+  position: absolute;
+  top: 16.5%;
+  left: 74.5%;
+  width: 350px;
+}
+
+.subtitle {
+  color: #FFFFFF91;
+  font-family: Monaco, monospace;
+  padding:1em;
+}
+
+.subtitle-box {
+  position: absolute;
+  top: 37%;
+  left: 4%;
+  width:450px;
+  height: 1px;
+  margin:auto;
+}
+
+/* CSS For SVG Asset 2 */
+
+#translation_background {
+  display: block;
+  position: absolute;
+  top: 35%;
+  left: 3%;
+  width: 500px;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+/* CSS For EPR */
+
+html {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+p {
+  font-family: Monaco, monospace;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+
+.box {
+  position: relative;
+  top: 25%;
+  left: 33%;
+  width: 150px;
+  height: 70px;
+  transition: width 0.3s, height 0.3s;
+  will-change: width, height;
+}
+
+.box:before,
+.box:after,
+.box em:after,
+.box em:before {
+  border-color: #BFE9FF91;
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-style: solid;
+  border-width: 0px;
+}
+.box:before {
+  left: 0;
+  top: 0;
+  border-left-width: 3px;
+  border-top-width: 3px;
+}
+.box:after {
+  right: 0;
+  top: 0;
+  border-right-width: 3px;
+  border-top-width: 3px;
+}
+.box em:before {
+  left: 0;
+  bottom: 0;
+  border-left-width: 3px;
+  border-bottom-width: 3px;
+}
+.box em:after {
+  right: 0;
+  bottom: 0;
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+}
+
+.box.is-opening {
+  width: 600px;
+  height: 400px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 70px;
+  background: #FFFFFF00;
+  border: 0;
+  font-size: 30px;
+  color: #FFFFFF;
+  outline: 0;
+}
+
+.button:after {
+  content: 'EPR';
+  color: #FFFFFF91;
+  transition: transform 0.2s;
+}
+
+.is-opening .button:after {
+  content: 'x';
+}
+
+.content {
+  opacity: 0;
+  padding: 0 60px;
+  transition: opacity 0.2s;
+  color: #FFFFFF91;
+  will-change: opacity;
+}
+
+.is-open .content {
+  opacity: 1;
+}

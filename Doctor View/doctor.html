@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+  <title>Doctor View</title>
+  <link rel="stylesheet" type="text/css" href="doctor_styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <!-- Sound Wave Animation -->
+  <div id="soundwave_animation">
+    <div id="bars"></div>
+    <div class="sound_scanner">
+      <span></span>
+    </div>
+  </div>
+
+  <!-- 'Understandometer' -->
+  <canvas id="gauge" width="300" height="300"></canvas>
+  <p style="font-family: Roboto; color: #BFE9FF91; font-size: 16pt; position: absolute; top: 36%; left: 80%;">Understanding</p>
+
+  <!-- EPR -->
+  <div class="box js-box">
+    <em></em>
+    <button class="button js-button"></button>
+    <div class="content">
+      <h1>Electronic Patient Record</h1>
+      <div>
+        <p style="float: left;"><img src="epr_photo.jpeg" width="150px" style="opacity:0.57;filter:alpha(opacity=57);"></p>
+        <p><b>Name:</b> John Smith</p></br>
+        <p><b>DOB:</b> 01/01/2000</p></br>
+        <p><b>Allergies:</b> N/A</p></br>
+        <p><b>Current Medication:</b> N/A</p></br>
+      </div>
+      <p><b>Notes:</b></p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+
+  <!-- Real Time Translation -->
+  <div id="translation">
+    <p style="font-family: Roboto; color: #BFE9FF91; font-size: 20pt; position: absolute; top: 35%; left: 5%;">Translating...</p>
+    <div class="subtitle-box">
+      <div id="typedtext" class="subtitle"></div>
+    </div>
+    <img src="Asset 2.svg" alt="Translation background"  id="translation_background">
+  </div>
+</body>
+<script type="text/javascript" src="doctor_scripts.js"></script>
+</html>
