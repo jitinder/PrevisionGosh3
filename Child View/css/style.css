@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
 #world {
+  padding-left: 30%;
   background: rgb(63, 63, 63);
   position:absolute;
   width:100%;
@@ -10,7 +11,7 @@
 #instructions{
   position:absolute;
   width:100%;
-  top:50%;
+  top:60%;
   margin: auto;
   margin-top:120px;
   font-family:'Open Sans', sans-serif;
