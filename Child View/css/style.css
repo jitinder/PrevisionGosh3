@@ -34,6 +34,9 @@ position:absolute;
   position:absolute;
     width:100%;
     top:15%;
+
+    line-height: 5em;
+
     margin: auto;
     padding-top: 120px;
     padding-right: 100px;
@@ -51,7 +54,7 @@ position:absolute;
 
 #generalList #instr1
 {
-    list-style: square;
+
 }
 
 #generalList #instr2
@@ -62,13 +65,6 @@ position:absolute;
 #generalList #instr3
 {
     list-style: square;
-}
-
-
-#generalList li
-{
-
-padding-top: 3em;
 }
 
 #instructions{
