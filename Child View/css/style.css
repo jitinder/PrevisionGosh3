@@ -59,12 +59,17 @@ position:absolute;
 
 #generalList #instr2
 {
-    list-style: circle;
+    /*list-style: circle;*/
 }
 
 #generalList #instr3
 {
-    list-style: square;
+    /*list-style: square;*/
+}
+
+#generalList #instr4
+{
+    /*list-style: square;*/
 }
 
 #instructions{
