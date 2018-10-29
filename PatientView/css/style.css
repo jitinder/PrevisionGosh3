@@ -1,0 +1,22 @@
+.subtitle{
+    color: white; 
+    font-family: Monaco, monospace;
+  padding:1em;
+  width:55%;
+  padding-left:200px;
+  }
+
+body {
+    background-color: black;
+}
+
+.subtitle-box {
+  bottom:0;
+  width:80%;
+  background:url(https://svgshare.com/i/93Y.svg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin:auto;
+}
