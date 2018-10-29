@@ -31,27 +31,39 @@ position:absolute;
 
 #generalList 
 {
-position:absolute;
-  width:100%;
-  top:15%;
-  margin: auto;
-  padding-top: 120px;
-  padding-right: 100px;
-  padding-left: 8em;
-  font-family:'Open Sans', sans-serif;
-  color:#FFFFFF;
-  font-size:.9em;
-  text-transform: lowercase;
-  text-align : left;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-
-/*list-style-type:none;*/
-
-  /*list-style-image: url('https://svgshare.com/s/95w');*/
+  position:absolute;
+    width:100%;
+    top:15%;
+    margin: auto;
+    padding-top: 120px;
+    padding-right: 100px;
+    padding-left: 8em;
+    font-family:'Open Sans', sans-serif;
+    color:#FFFFFF;
+    font-size:.9em;
+    text-transform: lowercase;
+    text-align : left;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
+
+#generalList #instr1
+{
+    list-style: square;
+}
+
+#generalList #instr2
+{
+    list-style: circle;
+}
+
+#generalList #instr3
+{
+    list-style: square;
+}
+
 
 #generalList li
 {
@@ -95,8 +107,8 @@ padding-top: 3em;
 }
 
 
-#information
+/*#information
 {
   padding-top: 3em;
   border-top: 1px;
-}
+}*/
