@@ -48,7 +48,7 @@
   background-color: #FFFFFFa0;
   z-index: 1;
   transform: translateY(135%);
-  animation: move 2.5s cubic-bezier(0.15, 0.44, 0.76, 0.64);
+  animation: move 4s cubic-bezier(0.15, 0.44, 0.76, 0.64);
   animation-iteration-count: infinite;
 }
 
@@ -72,6 +72,28 @@
 	margin: 100px auto;
 }
 
+#gauge_background {
+  position: absolute;
+  top: 16.5%;
+  left: 74.5%;
+  width: 350px;
+}
+
+.subtitle {
+  color: #FFFFFF91;
+  font-family: Monaco, monospace;
+  padding:1em;
+}
+
+.subtitle-box {
+  position: absolute;
+  top: 34%;
+  left: 4%;
+  width:450px;
+  height: 1px;
+  margin:auto;
+}
+
 /* CSS For SVG Asset 2 */
 
 #translation_background {
@@ -80,15 +102,6 @@
   top: 35%;
   left: 3%;
   width: 500px;
-}
-
-/* CSS For SVG Asset 4 */
-
-#gauge_background {
-  position: absolute;
-  top: 16.5%;
-  left: 74.5%;
-  width: 350px;
 }
 
 @-webkit-keyframes rotation {
@@ -124,7 +137,7 @@ h1 {
 }
 
 p {
-  font-family: monospace, sans-serif;
+  font-family: Monaco, monospace;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;
@@ -132,12 +145,12 @@ p {
 }
 
 .box {
-  position: relative; /* absolute for ocr */
+  position: relative;
   top: 25%;
   left: 33%;
   width: 150px;
   height: 70px;
-  transition: width 0.2s, height 0.2s;
+  transition: width 0.3s, height 0.3s;
   will-change: width, height;
 }
 
@@ -203,7 +216,6 @@ p {
 }
 
 .is-opening .button:after {
-  -transform: rotate(-45deg);
   content: 'x';
 }
 
