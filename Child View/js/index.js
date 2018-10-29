@@ -19,7 +19,6 @@ var floor, lion, fan,
     isBlowing = false;
 
 //SCREEN VARIABLES
-
 var HEIGHT,
   	WIDTH,
     windowHalfX,
@@ -43,17 +42,26 @@ function init(){
     aspectRatio,
     nearPlane,
     farPlane);
-  camera.position.z = 800;  
+  camera.position.z = 800;
+  camera.position.x=-50;  
   camera.position.y = 0;
-  camera.lookAt(new THREE.Vector3(0,0,0));    
+  camera.lookAt(new THREE.Vector3(2,0,0));    
+  
   renderer = new THREE.WebGLRenderer({alpha: true, antialias: true });
+  
   renderer.setPixelRatio( window.devicePixelRatio );
+  
   renderer.setSize(WIDTH, HEIGHT);
+  
   renderer.shadowMapEnabled = true;
+
   container = document.getElementById('world');
+
   container.appendChild(renderer.domElement);
+
   windowHalfX = WIDTH / 2;
   windowHalfY = HEIGHT / 2;
+
   window.addEventListener('resize', onWindowResize, false);
   document.addEventListener('mousemove', handleMouseMove, false);
   document.addEventListener('mousedown', handleMouseDown, false);
@@ -123,13 +131,13 @@ function createLights() {
   scene.add(shadowLight);
 }
 
-function createFloor(){ 
-  floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(1000,500), new THREE.MeshBasicMaterial({color: 0xebe5e7}));
-  floor.rotation.x = -Math.PI/2;
-  floor.position.y = -100;
-  floor.receiveShadow = true;
-  scene.add(floor);
-}
+// function createFloor(){ 
+//   floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(1000,500), new THREE.MeshBasicMaterial({color: 0xebe5e7}));
+//   floor.rotation.x = -Math.PI/2;
+//   floor.position.y = -100;
+//   floor.receiveShadow = true;
+//   scene.add(floor);
+// }
 
 function createLion(){
   lion = new Lion();
