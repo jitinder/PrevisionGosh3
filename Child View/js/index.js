@@ -147,26 +147,26 @@ Fan = function(){
   this.isBlowing = false;
   this.speed = 0;
   this.acc =0;
-  this.redMat = new THREE.MeshLambertMaterial ({
-    color: 0xad3525, 
-    shading:THREE.FlatShading
-  });
-  this.greyMat = new THREE.MeshLambertMaterial ({
-    color: 0x653f4c, 
-    shading:THREE.FlatShading
-  });
+  // this.redMat = new THREE.MeshLambertMaterial ({
+  //   color: 0xad3525, 
+  //   shading:THREE.FlatShading
+  // });
+  // this.greyMat = new THREE.MeshLambertMaterial ({
+  //   color: 0x653f4c, 
+  //   shading:THREE.FlatShading
+  // });
   
-  this.yellowMat = new THREE.MeshLambertMaterial ({
-    color: 0xfdd276, 
-    shading:THREE.FlatShading
-  });
+  // this.yellowMat = new THREE.MeshLambertMaterial ({
+  //   color: 0xfdd276, 
+  //   shading:THREE.FlatShading
+  // });
   
   var coreGeom = new THREE.BoxGeometry(10,10,20);
   var sphereGeom = new THREE.BoxGeometry(10, 10, 3);
   var propGeom = new THREE.BoxGeometry(10,30,2);
-  propGeom.applyMatrix( new THREE.Matrix4().makeTranslation( 0,25,0) );
+  //propGeom.applyMatrix( new THREE.Matrix4().makeTranslation( 0,25,0) );
   
-  this.core = new THREE.Mesh(coreGeom,this.greyMat);
+  //this.core = new THREE.Mesh(coreGeom,this.greyMat);
   
   // propellers
   var prop1 = new THREE.Mesh(propGeom, this.redMat);
@@ -188,9 +188,9 @@ Fan = function(){
   this.propeller.add(prop4);
   
   this.threegroup = new THREE.Group();
-  this.threegroup.add(this.core);
-  this.threegroup.add(this.propeller);
-  this.threegroup.add(this.sphere);
+  //this.threegroup.add(this.core);
+  //this.threegroup.add(this.propeller);
+  //this.threegroup.add(this.sphere);
 }
 
 Fan.prototype.update = function(xTarget, yTarget){
@@ -696,7 +696,7 @@ function render(){
 
 init();
 createLights();
-createFloor();
+//createFloor();
 createLion();
 createFan();
 loop();
