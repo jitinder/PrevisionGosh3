@@ -33,6 +33,7 @@ function init(){
   scene = new THREE.Scene();
   HEIGHT = window.innerHeight;
   WIDTH = window.innerWidth;
+  console.log(window.innerWidth);
   aspectRatio = WIDTH / HEIGHT;
   fieldOfView = 60;
   nearPlane = 1;
@@ -60,9 +61,7 @@ function init(){
   document.addEventListener('touchstart', handleTouchStart, false);
 	document.addEventListener('touchend', handleTouchEnd, false);
 	document.addEventListener('touchmove',handleTouchMove, false);
-  /*
-  controls = new THREE.OrbitControls( camera, renderer.domElement);
-  //*/
+  
 }
 
 function onWindowResize() {
@@ -611,7 +610,7 @@ Lion.prototype.look = function(xTarget, yTarget){
       var tv = this.body.geometry.vertices[this.bodyVertices[i]];
       tv.x = tvInit.x + this.head.position.x;
   }
-  
+
   this.body.geometry.verticesNeedUpdate = true;
 }
 
