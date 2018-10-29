@@ -77,9 +77,27 @@
 #translation_background {
   display: block;
   position: absolute;
-  top: 20%;
-  left: 5%;
-  width: 400px;
+  top: 35%;
+  left: 3%;
+  width: 500px;
+}
+
+/* CSS For SVG Asset 4 */
+
+#gauge_background {
+  position: absolute;
+  top: 16.5%;
+  left: 74.5%;
+  width: 350px;
+}
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
 }
 
 /* CSS For EPR */
@@ -109,14 +127,16 @@ p {
   font-family: monospace, sans-serif;
   font-weight: 400;
   margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 20px;
 }
 
 .box {
   position: relative; /* absolute for ocr */
   top: 25%;
   left: 33%;
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 70px;
   transition: width 0.2s, height 0.2s;
   will-change: width, height;
 }
@@ -128,8 +148,8 @@ p {
   border-color: #BFE9FF91;
   content: "";
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   border-style: solid;
   border-width: 0px;
 }
@@ -167,8 +187,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 70px;
   background: #FFFFFF00;
   border: 0;
   font-size: 30px;
@@ -177,13 +197,14 @@ p {
 }
 
 .button:after {
-  content: '+';
+  content: 'EPR';
   color: #FFFFFF91;
   transition: transform 0.2s;
 }
 
 .is-opening .button:after {
-  transform: rotate(-45deg);
+  -transform: rotate(-45deg);
+  content: 'x';
 }
 
 .content {

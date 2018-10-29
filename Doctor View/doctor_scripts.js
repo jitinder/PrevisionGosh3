@@ -12,6 +12,7 @@ function animateSoundBars() {
 
 function animateGauge() {
   var canvas = document.getElementById("gauge");
+  var background = document.getElementById("gauge_background")
   var ctx = canvas.getContext("2d");
   var W = canvas.width;
   var H = canvas.height;
@@ -47,6 +48,7 @@ function animateGauge() {
     degrees++;
     else
     degrees--;
+    background.style.transform = "rotate("+degrees+"deg)"
     init();
   }
   draw();
@@ -65,7 +67,7 @@ function animateEPR() {
     if (box.classList.contains(first)) {
       [first, second] = [second, first]
     }
-    
+
     box.classList.toggle(first)
 
     setTimeout(() => {
@@ -75,7 +77,7 @@ function animateEPR() {
 }
 
 window.onload = function() {
-  animateEPR();
+  animateEPR(); // TODO add timers to scan first, then have the popups
   animateGauge();
   animateSoundBars();
 };
