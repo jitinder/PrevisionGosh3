@@ -1,3 +1,10 @@
+// Icon animations
+
+
+
+
+
+
 
 //THREEJS RELATED VARIABLES 
 
@@ -34,7 +41,7 @@ function init(){
   WIDTH = window.innerWidth;
   console.log(window.innerWidth);
   aspectRatio = WIDTH / HEIGHT;
-  fieldOfView = 60;
+  fieldOfView = 50;
   nearPlane = 1;
   farPlane = 2000; 
   camera = new THREE.PerspectiveCamera(
@@ -360,7 +367,7 @@ Lion = function(){
   
   this.mane.position.y = -10;
   this.mane.position.z = 80;
-  //this.mane.rotation.z = Math.PI/4;
+  // this.mane.rotation.z = Math.PI/4;
   
   // face
   this.face = new THREE.Mesh(faceGeom, this.yellowMat);

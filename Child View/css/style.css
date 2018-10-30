@@ -2,7 +2,7 @@
 
 .nextToItem
 {
-  width: 8%;
+  width: 5%;
   float: left;
   padding-right: 1em;
   /*padding-top: 1em;*/
@@ -42,9 +42,11 @@ position:absolute;
 {
   position:absolute;
     width:100%;
-    top:15%;
+    top:2%;
 
     line-height: 5em;
+
+    /*padding-bottom: 5em;*/
 
     margin: auto;
     padding-top: 120px;
