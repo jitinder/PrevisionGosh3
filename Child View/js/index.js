@@ -708,7 +708,7 @@ function render(){
 
 init();
 createLights();
-//createFloor();
+// createFloor();
 createLion();
 createFan();
 loop();

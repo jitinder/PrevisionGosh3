@@ -1,5 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
 
+.nextToItem
+{
+  width: 8%;
+  float: left;
+  padding-right: 1em;
+  
+}
+
+
 #world {
   padding-left: 30%;
   background: rgba(63, 63, 70,10);
@@ -54,7 +63,7 @@ position:absolute;
 
 #generalList #instr1
 {
-
+  list-style-image: url('http://svgur.com/s/95w');
 }
 
 #generalList #instr2
