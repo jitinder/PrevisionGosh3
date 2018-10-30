@@ -1,11 +1,6 @@
 // Icon animations
 
 
-
-
-
-
-
 //THREEJS RELATED VARIABLES 
 
 var scene, 
