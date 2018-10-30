@@ -2,14 +2,17 @@
 
 /* CSS For Sound Bars */
 
-#bars {
+#soundwave_animation {
   position: absolute;
   top: 5%;
-  left: 49%;
+}
+
+#bars {
+  position: relative;
   height: 14px;
   width: 180px;
   margin: 0 0 0 0;
-  transform:scale(3) translateX(-15%);
+  transform:scale(3);
 }
 
 .bar {
@@ -35,21 +38,13 @@
 
 /* CSS For Sound Scanner */
 
-.sound_scanner {
-  position: absolute;
-  left: 28%;
-  top: 2.5%;
-  transform: translate(-50%, -50%);
-  backface-visibility: hidden;
-}
-
 .sound_scanner span {
   position: absolute;
   width: 4px;
   height: 100px;
+  top: -20px;
+  left: -185px;
   background-color: #FFFFFFa0;
-  z-index: 1;
-  transform: translateY(135%);
   animation: move 4s cubic-bezier(0.15, 0.44, 0.76, 0.64);
   animation-iteration-count: infinite;
 }
@@ -66,15 +61,37 @@
 
 /* CSS For 'Understanding' Gauge */
 
+#understandometer {
+  position: absolute;
+  left: 75%;
+}
+
 #gauge {
-	position: absolute;
-  top: 19%;
-  left: 76%;
-	width: 300px;
-	margin: 100px auto;
+	position: relative;
+}
+
+#understanding {
+   font-family: Roboto;
+   font-size: 12pt;
+   position: relative;
+   top: -140px;
+   left: 95px;
 }
 
 /* Translation Text */
+
+#translation {
+  position: absolute;
+  left: 2%;
+}
+
+#translation_background {
+  display: block;
+  position: relative;
+  -top: 35%;
+  -left: 2%;
+  width: 350px;
+}
 
 .subtitle {
   color: #FFFFFF91;
@@ -83,27 +100,23 @@
 }
 
 .subtitle-box {
-  position: absolute;
-  top: 38%;
-  left: 3%;
+  position: relative;
+  top: 25px;
+  -left: 3%;
   width:300px;
   height: 1px;
   margin:auto;
 }
 
-#translation_background {
-  display: block;
-  position: absolute;
-  top: 35%;
-  left: 2%;
-  width: 350px;
-}
-
 /* Loading Indicator */
+
 .loading {
   font-family: 'Roboto';
   font-size: 30px;
   color: #BFE9FF91;
+  position: relative;
+  top: 40px;
+  left: 40px;
 }
 
 .loading:after {
