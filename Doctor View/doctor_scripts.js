@@ -106,7 +106,9 @@ function animateEPR() {
 }
 
 var aText = new Array(
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et. Enim ut sem viverra aliquet. Aliquam ultrices sagittis orci a scelerisque purus. "
+  "- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "- Habitant morbi tristique senectus et netus et. Enim ut sem viverra aliquet.",
+  "- Aliquam ultrices sagittis orci a scelerisque purus. "
 );
 var iSpeed = 100;
 var iIndex = 0;
