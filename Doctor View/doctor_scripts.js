@@ -12,6 +12,7 @@ function animateSoundBars() {
 
 function animateGauge() {
   var canvas = document.getElementById("gauge");
+  var understanding = document.getElementById("understanding");
   var ctx = canvas.getContext("2d");
   var W = canvas.width;
   var H = canvas.height;
@@ -21,26 +22,42 @@ function animateGauge() {
   var color = "#BFE9FF91";
   var text;
   var animation_loop, redraw_loop;
+  function perc2color(perc) {
+    var r, g, b = 0;
+    if(perc < 50) {
+      r = 255;
+      g = Math.round(5.1 * perc);
+    }
+    else {
+      g = 255;
+      r = Math.round(510 - 5.10 * perc);
+    }
+    var h = r * 0x10000 + g * 0x100 + b * 0x1;
+    return '#' + ('000000' + h.toString(16)).slice(-6);
+  }
   function init()
   {
-		ctx.clearRect(0, 0, W, H);
+    ctx.clearRect(0, 0, W, H);
+    percentage = Math.floor(degrees/360*100)
+    color = perc2color(percentage) + '91';
+    understanding.style.color = color;
 
-		ctx.beginPath();
-		ctx.strokeStyle = "#00000000";
-		ctx.lineWidth = 30;
-		ctx.arc(W/2, H/2, 100, 0, Math.PI*2, false);
-		ctx.stroke();
+    ctx.beginPath();
+    ctx.strokeStyle = "#FFFFFF00";
+    ctx.lineWidth = 30;
+    ctx.arc(W/2, H/2, 100, 0, Math.PI*2, false);
+    ctx.stroke();
 
-		var radians = degrees * Math.PI / 180;
-		ctx.beginPath();
-		ctx.strokeStyle = color;
-		ctx.lineWidth = 30;
-		ctx.arc(W/2, H/2, 100, 0 - 90*Math.PI/180, radians - 90*Math.PI/180, false);
-		ctx.stroke();
+    var radians = degrees * Math.PI / 180;
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 30;
+    ctx.arc(W/2, H/2, 100, 0 - 90*Math.PI/180, radians - 90*Math.PI/180, false);
+    ctx.stroke();
 
     ctx.fillStyle = color;
     ctx.font = "35px Roboto";
-    text = Math.floor(degrees/360*100) + "%";
+    text = percentage + '%'
     text_width = ctx.measureText(text).width;
     ctx.fillText(text, W/2 - text_width/2, H/2);
   }
@@ -89,7 +106,7 @@ function animateEPR() {
 }
 
 var aText = new Array(
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et. Enim ut sem viverra aliquet. Aliquam ultrices sagittis orci a scelerisque purus. "
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitant morbi tristique senectus et netus et. Enim ut sem viverra aliquet. Aliquam ultrices sagittis orci a scelerisque purus. "
 );
 var iSpeed = 100;
 var iIndex = 0;
@@ -101,24 +118,24 @@ var iRow;
 
 function typewriter()
 {
- sContents =  ' ';
- iRow = Math.max(0, iIndex-iScrollAt);
- var destination = document.getElementById("typedtext");
+  sContents =  ' ';
+  iRow = Math.max(0, iIndex-iScrollAt);
+  var destination = document.getElementById("typedtext");
 
- while ( iRow < iIndex ) {
-  sContents += aText[iRow++] + '<br />';
- }
- destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos);
- if ( iTextPos++ == iArrLength ) {
-  iTextPos = 0;
-  iIndex++;
-  if ( iIndex != aText.length ) {
-   iArrLength = aText[iIndex].length;
-   setTimeout("typewriter()", 500);
+  while ( iRow < iIndex ) {
+    sContents += aText[iRow++] + '<br />';
   }
- } else {
-  setTimeout("typewriter()", iSpeed);
- }
+  destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos);
+  if ( iTextPos++ == iArrLength ) {
+    iTextPos = 0;
+    iIndex++;
+    if ( iIndex != aText.length ) {
+      iArrLength = aText[iIndex].length;
+      setTimeout("typewriter()", 500);
+    }
+  } else {
+    setTimeout("typewriter()", iSpeed);
+  }
 }
 
 window.onload = function() {
