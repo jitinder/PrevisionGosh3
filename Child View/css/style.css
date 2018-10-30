@@ -65,23 +65,44 @@ position:absolute;
 
 #generalList #instr1
 {
-  list-style-image: url('http://svgur.com/s/95w');
+  /*list-style-image: url('http://svgur.com/s/95w');*/
+  animation: fadeIn 1s linear;
+  animation-fill-mode: both;
 }
 
 #generalList #instr2
 {
     /*list-style: circle;*/
+  animation: fadeIn 3s linear;
+  animation-fill-mode: both;
 }
 
 #generalList #instr3
 {
-    /*list-style: square;*/
+  animation: fadeIn 5s linear;
+  animation-fill-mode: both;
 }
 
 #generalList #instr4
 {
-    /*list-style: square;*/
+  animation: fadeIn 7s linear;
+  animation-fill-mode: both;
 }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    top: 100px;
+  }
+  75% {
+    opacity: 0.05;
+    top: 0px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 #instructions{
   position:absolute;
