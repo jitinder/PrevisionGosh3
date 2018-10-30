@@ -37,7 +37,7 @@
 
 .sound_scanner {
   position: absolute;
-  left: 27.5%;
+  left: 28%;
   top: 2.5%;
   transform: translate(-50%, -50%);
   backface-visibility: hidden;
@@ -68,18 +68,13 @@
 
 #gauge {
 	position: absolute;
-  top: 19%;
+  top: 0%;
   left: 76%;
 	width: 300px;
 	margin: 100px auto;
 }
 
-#gauge_background {
-  position: absolute;
-  top: 20%;
-  left: 74.5%;
-  width: 350px;
-}
+/* Translation Text */
 
 .subtitle {
   color: #FFFFFF91;
@@ -89,30 +84,48 @@
 
 .subtitle-box {
   position: absolute;
-  top: 37%;
-  left: 4%;
+  top: 38%;
+  left: 3%;
   width:300px;
   height: 1px;
   margin:auto;
 }
 
-/* CSS For SVG Asset 2 */
-
 #translation_background {
   display: block;
   position: absolute;
   top: 35%;
-  left: 3%;
+  left: 2%;
   width: 350px;
 }
 
-@-webkit-keyframes rotation {
-		from {
-				-webkit-transform: rotate(0deg);
-		}
-		to {
-				-webkit-transform: rotate(359deg);
-		}
+/* Loading Indicator */
+.loading {
+  font-family: 'Roboto';
+  font-size: 30px;
+  color: #BFE9FF91;
+}
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(6,end) 1800ms infinite;
+  animation: ellipsis steps(6,end) 1800ms infinite;
+  content: "\2026";
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
 }
 
 /* CSS For EPR */
@@ -238,7 +251,7 @@ p {
 .scanner {
   position: relative;
   top: 1%;
-  --color: rgba(67,132,250,.5);
+  --color: rgba(67,132,250,.57);
   z-index: 1;
   height: .25em;
   width: 500px;
