@@ -22,6 +22,9 @@ function animateGauge() {
   var color = "#BFE9FF91";
   var text;
   var animation_loop, redraw_loop;
+  var index = 0;
+  var array = new Array(180, 122, 220, 361);
+
   function perc2color(perc) {
     var r, g, b = 0;
     if(perc < 50) {
@@ -65,9 +68,14 @@ function animateGauge() {
   function draw()
   {
     if(typeof animation_loop != undefined) clearInterval(animation_loop);
-    new_degrees = Math.round(Math.random()*360);
+    new_degrees = array[index];
+    index++;
+    if(index >= array.length)
+    {
+      index = 0;
+    }
     difference = new_degrees - degrees;
-    animation_loop = setInterval(animate_to, 5000/difference);
+    animation_loop = setInterval(animate_to, 1000/difference);
   }
 
   function animate_to()
@@ -81,7 +89,7 @@ function animateGauge() {
     init();
   }
   draw();
-  redraw_loop = setInterval(draw, 15000);
+  redraw_loop = setInterval(draw, 6000);
 }
 
 function animateEPR() {

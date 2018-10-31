@@ -1,8 +1,8 @@
 // set up text to print, each item in array is new line
 var aText = new Array(
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vehicula faucibus quam. Etiam in vestibulum tellus. In pellentesque nisi maximus, cursus risus id, tempor justo. Maecenas sed libero sed nulla tempus eleifend et sit amet nisi. Donec vitae tincidunt tortor. Sed et rhoncus enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vehicula faucibus quam. Etiam in vestibulum tellus. In pellentesque nisi maximus, cursus risus id, tempor justo."
 );
-var iSpeed = 50; // time delay of print out
+var iSpeed = 100; // time delay of print out
 var iIndex = 0; // start printing array at this posision
 var iArrLength = aText[0].length; // the length of the text array
 var iScrollAt = 20; // start scrolling up at this many lines
@@ -32,15 +32,12 @@ function typewriter()
   setTimeout("typewriter()", iSpeed);
  }
 }
-
-
 typewriter();
 
-function animateEPR() {
-  const button = document.querySelector('.js-button')
-
-  button.addEventListener('click', function() {
-    const box = document.querySelector('.js-box')
+function animateVideo() {
+  var vidButton = document.getElementById('play-vid');
+    
+  const box = document.querySelector('.js-vid')
 
     let first = 'is-opening'
     , second = 'is-open'
@@ -50,14 +47,28 @@ function animateEPR() {
     }
 
     box.classList.toggle(first)
+  if(vidButton.src == "https://svgshare.com/i/94V.svg"){
+      vidButton.src = "https://svgshare.com/i/95E.svg";
+    } else {
+      vidButton.src = "https://svgshare.com/i/94V.svg";
+    }
 
     setTimeout(() => {
       box.classList.toggle(second)
-    }, 400)
-  })
+    }, 5)
+}
+
+function animateSoundBars() {
+  for (var i = 0; i < 90; i++) {
+
+    var left = i * 2 + 1;
+    var anim = Math.floor(Math.random() * 75 + 400);
+    var height = Math.floor(Math.random() * 20 + 3);
+
+    document.querySelector('#bars').innerHTML += '<div class="bar" style="left:' + left + 'px;animation-duration:' + anim + 'ms;height:' + height + 'px"></div>';
+  }
 }
 
 window.onload = function() {
-  animateEPR(); // TODO add timers to scan first, then have the popups
+  animateSoundBars();
 };
-
