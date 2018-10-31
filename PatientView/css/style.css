@@ -1,21 +1,48 @@
 .subtitle{
-    color: white; 
-    font-family: Monaco, monospace;
+  color: #FFFFFF91;
+  font-family: Monaco, monospace;
   padding:1em;
   width:55%;
   padding-left:16%;
   text-align:justify;
+}
+
+#soundwave_animation {
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+}
+
+.sound_scanner span {
+  position: absolute;
+  width: 3px;
+  height: 60px;
+  top: -38px;
+  left: -88px;
+  background-color: #FFFFFFa0;
+  animation: move 4s cubic-bezier(0.15, 0.44, 0.76, 0.64);
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  0%,
+  100% {
+    transform: translateX(360px);
   }
+  50% {
+    transform: translateX(0px);
+  }
+}
 
 body {
-    background-color: black;
+  background-color: black;
   font-family: Monaco, monospace;
 }
 
 .subtitle-box {
   position: absolute;
   bottom: 0;
-  right:30%;
+  right:29%;
   width:80%;
   background:url(https://svgshare.com/i/93Y.svg) no-repeat center center;
   -webkit-background-size: cover;
@@ -28,9 +55,7 @@ body {
 /* CSS For Sound Bars */
 
 #bars {
-  position: absolute;
-  bottom: 5%;
-  left: 70%;
+  position: relative;
   height: 14px;
   width: 180px;
   margin: 0 0 0 0;
@@ -48,21 +73,20 @@ body {
 }
 
 @keyframes sound {
-    0% {
-        opacity: .35;
-        height: 3px;
-    }
-    100% {
-        opacity: 1;
-        height: 28px;
-    }
+  0% {
+    opacity: .35;
+    height: 3px;
+  }
+  100% {
+    opacity: 1;
+    height: 28px;
+  }
 }
 
 
 .js-vid {
-  position: absolute; /* absolute for ocr */
+  position: absolute;
   left: 2%;
-  top: 35%;
   width: 15%;
   height: 10%;
 }
@@ -109,7 +133,7 @@ body {
 }
 
 .prescription {
-  color:white;
+  color:#FFFFFF91;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -150,7 +174,7 @@ body {
 }
 
 .caution {
-  color:white;
+  color:#FFFFFF91;
   height: 80%;
   width: 80%;
   margin:auto;
@@ -161,7 +185,7 @@ body {
 }
 
 .caution h3{
- font-family: "Roboto", Roboto, monospace;
+  font-family: "Roboto", Roboto, monospace;
   text-align:center;
 }
 
@@ -240,7 +264,7 @@ img
 }
 
 h6 {
-    color: white;
-    font-size: 11pt;
-    text-align: center;
+  color: #FFFFFF91;
+  font-size: 11pt;
+  text-align: center;
 }
