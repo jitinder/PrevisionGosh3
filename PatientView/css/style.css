@@ -3,30 +3,169 @@
     font-family: Monaco, monospace;
   padding:1em;
   width:55%;
-  padding-left:200px;
+  padding-left:16%;
+  text-align:justify;
   }
 
 body {
     background-color: black;
+  font-family: Monaco, monospace;
 }
 
 .subtitle-box {
-  bottom:0;
+  position: absolute;
+  bottom: 0;
+  right:30%;
   width:80%;
   background:url(https://svgshare.com/i/93Y.svg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  margin-bottom:10px;
+}
+
+/* CSS For Sound Bars */
+
+#bars {
+  position: absolute;
+  bottom: 5%;
+  left: 70%;
+  height: 14px;
+  width: 180px;
+  margin: 0 0 0 0;
+  transform: scale(2);
+}
+
+.bar {
+  position: fixed;
+  bottom: 15px;
+  height: 3px;
+  width: 1px;
+  background: #BFE9FF91;
+  animation: sound 0ms -900ms linear infinite alternate;
+  transform: translateY(50%);
+}
+
+@keyframes sound {
+    0% {
+        opacity: .35;
+        height: 3px;
+    }
+    100% {
+        opacity: 1;
+        height: 28px;
+    }
+}
+
+
+.js-vid {
+  position: absolute; /* absolute for ocr */
+  left: 2%;
+  top: 35%;
+  width: 15%;
+  height: 10%;
+}
+
+.content-video {
+  height:100%;
+  width:100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: #FFFFFF91;
+  will-change: opacity;
+}
+
+.js-video {
+  height:98%;
+  width: 98%;
+}
+
+.is-open .js-video {
+  position: absolute;
+  z-index: 0;
+}
+
+.is-open .video {
+  height: 100%;
+  width: 100%;
+}
+
+.is-open .content-video {
+  opacity: 1;
+  height: 75%;
+  width: 75%;
+  position: absolute;
+  z-index:1;
+  right: 6%;
+  bottom: 4%;
+}
+
+.js-box {
+  position: absolute;
+  right: 5%;
+  width: 55%;
+  height: 35%;
+}
+
+.prescription {
+  color:white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:0;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.prescription h3 {
+  font-family: "Roboto", Roboto, monospace;
+}
+
+.prescription table {
+  font-size: 12pt;
+  width: 100%;
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2em 1em;
+}
+
+.prescription td {
+  text-align: center;
+  vertical-align: top;
+  word-break: normal;
+}
+
+.prescription td img {
+  width: 100%;
+  height: 25%;
+}
+
+.js-box2 {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  width: 15%;
+  height: 30%;
+}
+
+.caution {
+  color:white;
+  height: 80%;
+  width: 80%;
   margin:auto;
 }
 
+.caution-line {
+  width:100%;
+}
+
+.caution h3{
+ font-family: "Roboto", Roboto, monospace;
+  text-align:center;
+}
+
 .box {
-  position: relative; /* absolute for ocr */
-  top: 25%;
-  left: 33%;
-  width: 150px;
-  height: 70px;
   transition: width 0.2s, height 0.2s;
   will-change: width, height;
 }
@@ -46,55 +185,31 @@ body {
 .box:before {
   left: 0;
   top: 0;
-  border-left-width: 3px;
-  border-top-width: 3px;
+  border-left-width: 2px;
+  border-top-width: 2px;
 }
 .box:after {
   right: 0;
   top: 0;
-  border-right-width: 3px;
-  border-top-width: 3px;
+  border-right-width: 2px;
+  border-top-width: 2px;
 }
 .box em:before {
   left: 0;
   bottom: 0;
-  border-left-width: 3px;
-  border-bottom-width: 3px;
+  border-left-width: 2px;
+  border-bottom-width: 2px;
 }
 .box em:after {
   right: 0;
   bottom: 0;
-  border-right-width: 3px;
-  border-bottom-width: 3px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
 }
 
 .box.is-opening {
-  width: 600px;
-  height: 400px;
-}
-
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 70px;
-  background: #FFFFFF00;
-  border: 0;
-  font-size: 30px;
-  color: #FFFFFF;
-  outline: 0;
-}
-
-.button:after {
-  content: 'CAUTIONS';
-  color: #FFFFFF91;
-  transition: transform 0.2s;
-}
-
-.is-opening .button:after {
-  -transform: rotate(-45deg);
-  content: 'x';
+  width: 35%;
+  height: 40%;
 }
 
 .content {
@@ -112,12 +227,20 @@ body {
 }
 
 .icon-square {
-  height: 75px;
-  width: 75px;
+  height: 25px;
+  width: 25px;
+  float: left;
+  margin-right: 10px;
 }
 
 img
 {
   max-width: 100%;
   max-height: 100%;
+}
+
+h6 {
+    color: white;
+    font-size: 11pt;
+    text-align: center;
 }
