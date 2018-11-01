@@ -1,3 +1,4 @@
+// Will animate the blue sound bars to simulate a sound wave
 function animateSoundBars() {
   for (var i = 0; i < 90; i++) {
 
@@ -15,6 +16,7 @@ var array = new Array(80,80);
 var degrees = 122;
 var new_degrees = 0;
 
+// Added keybinds to help with filming the video - different aspects of the view appear based on the keys pressed
 window.addEventListener("keyup", function(event) {
   // Cancel the default action, if needed
   event.preventDefault();
@@ -50,7 +52,9 @@ window.addEventListener("keyup", function(event) {
   }
 });
 
+// Animate the 'Understandometer'
 function animateGauge() {
+  // Grab the related elements and set up variables
   var canvas = document.getElementById("gauge");
   var understanding = document.getElementById("understanding");
   var ctx = canvas.getContext("2d");
@@ -62,6 +66,8 @@ function animateGauge() {
   var animation_loop, redraw_loop;
   var index = 0;
   //var array = new Array(180, 122, 220, 361);
+
+  // Convert a percentage into a hex colour ranging from red to green
   function perc2color(perc) {
     var r, g, b = 0;
     if(perc < 50) {
@@ -75,6 +81,8 @@ function animateGauge() {
     var h = r * 0x10000 + g * 0x100 + b * 0x1;
     return '#' + ('000000' + h.toString(16)).slice(-6);
   }
+
+  // Setup the drawing of the gauge
   function init()
   {
     ctx.clearRect(0, 0, W, H);
@@ -82,6 +90,7 @@ function animateGauge() {
     color = perc2color(percentage) + '91';
     understanding.style.color = color;
 
+    // Draw the arc surrounding the text
     ctx.beginPath();
     ctx.strokeStyle = "#FFFFFF00";
     ctx.lineWidth = 30;
@@ -95,6 +104,7 @@ function animateGauge() {
     ctx.arc(W/2, H/2, 100, 0 - 90*Math.PI/180, radians - 90*Math.PI/180, false);
     ctx.stroke();
 
+    // Percentage text - 'x% Understanding'
     ctx.fillStyle = color;
     ctx.font = "35px Roboto";
     text = percentage + '%'
@@ -105,18 +115,21 @@ function animateGauge() {
   function draw()
   {
     if(typeof animation_loop != undefined) clearInterval(animation_loop);
+    // Select the new degrees to move to
     new_degrees = array[index];
     index++;
     if(index >= array.length)
     {
       index = 0;
     }
+    // Calculate the difference and set the animation speed accordingly
     difference = new_degrees - degrees;
     animation_loop = setInterval(animate_to, 1000/difference);
   }
 
   function animate_to()
   {
+    // Increase degrees closer to the desired value while increasing / decreasing the size of the arc
     if(degrees == new_degrees)
     clearInterval(animation_loop);
     if(degrees < new_degrees)
@@ -126,9 +139,11 @@ function animateGauge() {
     init();
   }
   draw();
+  // Redraw every 6000ms
   redraw_loop = setInterval(draw, 6000);
 }
 
+// Animates the EPR to allow for a 'click'
 function animateEPR() {
   const button = document.querySelector('.js-button')
 
@@ -150,6 +165,7 @@ function animateEPR() {
   })
 }
 
+// Variables for typewriter
 var aText = new Array(
   "Drowsiness…?"
 );
@@ -159,13 +175,14 @@ var iTextPos = 0;
 var sContents = '';
 var iRow;
 
+// Animates the typewriter
 function typewriter() {
   var iIndex = 0; // start printing array at this posision
   var iArrLength = aText[0].length; // the length of the text array
  sContents =  ' ';
  iRow = Math.max(0, iIndex-iScrollAt);
  var destination = document.getElementById("typedtext");
- 
+
  while ( iRow < iIndex ) {
   sContents += aText[iRow++] + '<br />';
  }
@@ -182,8 +199,8 @@ function typewriter() {
  }
 }
 
-window.onload = function() {
-  animateEPR(); // TODO add timers to scan first, then have the popups
+window.onload = function() { // Run all animations on page load
+  animateEPR();
   animateGauge();
   animateSoundBars();
   typewriter();
