@@ -35,8 +35,8 @@
 }
 
 body {
-  background-color: black;
   font-family: Monaco, monospace;
+  background: black;
 }
 
 .subtitle-box {
@@ -233,7 +233,7 @@ body {
 
 .box.is-opening {
   width: 35%;
-  height: 40%;
+  height: 50%;
 }
 
 .content {

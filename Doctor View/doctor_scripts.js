@@ -10,21 +10,58 @@ function animateSoundBars() {
   }
 }
 
+
+var array = new Array(80,80);
+var degrees = 122;
+var new_degrees = 0;
+
+window.addEventListener("keyup", function(event) {
+  // Cancel the default action, if needed
+  event.preventDefault();
+  if (event.keyCode === 49) { // key 1
+    // Trigger the button element with a click
+    aText = new Array("So I take it 4 times a day for 7 days?");
+    array = new Array(221,221);
+    typewriter();
+    animateGauge();
+  }
+  if (event.keyCode === 50) { // key 2
+    // Trigger the button element with a click
+    aText = new Array("Yes. ");
+    array = new Array(361,361);
+    typewriter();
+    animateGauge();
+  }
+
+  if (event.keyCode === 51) { // key 3
+    // Trigger the button element with a click
+    aText = new Array("Could you explain it simpler? ");
+    array = new Array(122,122);
+    typewriter();
+    animateGauge();
+  }
+
+  if (event.keyCode === 52) { // key 4
+    // Trigger the button element with a click
+    aText = new Array("No, thank you very much for your help.");
+    array = new Array(361,361);
+    typewriter();
+    animateGauge();
+  }
+});
+
 function animateGauge() {
   var canvas = document.getElementById("gauge");
   var understanding = document.getElementById("understanding");
   var ctx = canvas.getContext("2d");
   var W = canvas.width;
   var H = canvas.height;
-  var degrees = 0;
-  var new_degrees = 0;
   var difference = 0;
   var color = "#BFE9FF91";
   var text;
   var animation_loop, redraw_loop;
   var index = 0;
-  var array = new Array(180, 122, 220, 361);
-
+  //var array = new Array(180, 122, 220, 361);
   function perc2color(perc) {
     var r, g, b = 0;
     if(perc < 50) {
@@ -114,38 +151,35 @@ function animateEPR() {
 }
 
 var aText = new Array(
-  "- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  "- Habitant morbi tristique senectus et netus et. Enim ut sem viverra aliquet.",
-  "- Aliquam ultrices sagittis orci a scelerisque purus. "
+  "Drowsiness…?"
 );
-var iSpeed = 100;
-var iIndex = 0;
-var iArrLength = aText[0].length;
+var iSpeed = 30;
 var iScrollAt = 20;
 var iTextPos = 0;
 var sContents = '';
 var iRow;
 
-function typewriter()
-{
-  sContents =  ' ';
-  iRow = Math.max(0, iIndex-iScrollAt);
-  var destination = document.getElementById("typedtext");
-
-  while ( iRow < iIndex ) {
-    sContents += aText[iRow++] + '<br />';
+function typewriter() {
+  var iIndex = 0; // start printing array at this posision
+  var iArrLength = aText[0].length; // the length of the text array
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos);
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
   }
-  destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos);
-  if ( iTextPos++ == iArrLength ) {
-    iTextPos = 0;
-    iIndex++;
-    if ( iIndex != aText.length ) {
-      iArrLength = aText[iIndex].length;
-      setTimeout("typewriter()", 500);
-    }
-  } else {
-    setTimeout("typewriter()", iSpeed);
-  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
 }
 
 window.onload = function() {

@@ -12,12 +12,8 @@
 
 </head>
 
-<body>
-
-  <head>
-    <title>Patient</title>
-  </head>
   <body>
+
     <div class="subtitle-box">
       <div id="typedtext" class="subtitle"></div>
     </div>
@@ -40,15 +36,16 @@
 
     <div class="box js-box2">
       <em></em>
-      <div class="caution">
+      <div id="a21" class="caution" style="display:none;">
         <h3>CAUTIONS</h3>
         <div class="caution-line">
-          <img src='https://image.flaticon.com/icons/svg/1147/1147934.svg' title='No Smoking' class="icon-square" style="opacity:0.57;filter:alpha(opacity=57);"/>
-          <h5>With Food</h5>
+          <img src='https://svgshare.com/i/98a.svg' title='No Drinking' class="icon-square" style="opacity:0.57;filter:alpha(opacity=57);"/>
+          <h5>No Alcohol</h5>
         </div>
         <br>
-        <div class="caution-line"><img src='https://svgshare.com/i/98a.svg' title='No Drinking' class="icon-square" style="opacity:0.57;filter:alpha(opacity=57);"/>
-          <h5>No Alcohol</h5>
+        <div class="caution-line">
+          <img src='https://image.flaticon.com/icons/svg/1147/1147007.svg' title='Dizziness' class="icon-square" style="opacity:0.57;filter:alpha(opacity=57);"/>
+          <h5>Dizziness/Drowsiness</h5>
         </div>
       </div>
     </div>
@@ -63,21 +60,10 @@
             <th>Medicine</th>
             <th>Dosage</th>
           </tr>
-          <tr>
+          <tr id="a1" style="display:none;">
             <td><img src="https://image.flaticon.com/icons/svg/843/843181.svg" class="icon-square" style="opacity:0.57;filter:alpha(opacity=57);"></td>
-            <td>Salbutamol</td>
-            <td>Two tablets every 12 hours with food</td>
-          </tr>
-          <tr>
-            <td><img src="https://image.flaticon.com/icons/svg/291/291870.svg" class="icon-square" style="opacity:0.57;filter:alpha(opacity=57);"></td>
-            <td>Paracetamol</td>
-            <td>2 tablets, each tablet to be taken separately, once after breakfast, once after dinner</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Nitrofurantoin</td>
+            <td id="a2" style="display:none;">4 times a day for 7 days with food.</td>
           </tr>
         </table>
       </div>
@@ -89,9 +75,5 @@
 
   <script  src="js/index.js"></script>
 
-
-
-
-</body>
 
 </html>
