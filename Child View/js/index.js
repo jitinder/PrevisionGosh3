@@ -1,5 +1,6 @@
 // Icon animations
 
+//Code adapted from https://codepen.io/Yakudoo/pen/YXxmYR 
 
 //THREEJS RELATED VARIABLES 
 
