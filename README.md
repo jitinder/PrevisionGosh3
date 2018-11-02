@@ -1,4 +1,4 @@
-# PrevisionGosh3
+# Prevision Exercise GOSH Team 3 - Breaking Communication Barriers
 
 GOSH Previsional Exercise About the Future of Medicine involving Holographic Displays such as the HoloLens. 
 
